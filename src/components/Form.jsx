@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = () => {
+const Form = ({ addAppoinment }) => {
 
     const [ appointment, setAppointment ] = useState({
         pet: '',
@@ -17,10 +17,17 @@ const Form = () => {
         });
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        //set App state
+        addAppoinment(appointment);
+    }
+
 
     return (
         <div>
-            <form>
+            <form onSubmit={ handleSubmit }>
 
 
                 <label>Pet name</label>

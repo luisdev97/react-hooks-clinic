@@ -4,7 +4,12 @@ import Form from './components/Form';
 
 const App = () => {
 
-  const [ appoinments , setAppoinments ] = useState([]); 
+  const [ appoinments , setAppoinments ] = useState([]);
+
+  const addAppoinment = appoinment => {
+    const updatedAppoinments = [...appoinments, appoinment];
+    setAppoinments(updatedAppoinments); 
+  }
 
   return (
     <>
@@ -13,7 +18,7 @@ const App = () => {
         <div className="row">
 
           <div className="one-half column">
-              <Form/>
+              <Form addAppoinment={ addAppoinment }/>
           </div>
 
           <div className="one-half column">
