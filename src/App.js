@@ -11,6 +11,12 @@ const App = () => {
     setAppoinments(updatedAppoinments); 
   }
 
+  const removeAppoinment = index => {
+      const updatedAppoinments = [...appoinments];
+      updatedAppoinments.splice(index, 1);
+      setAppoinments(updatedAppoinments);
+  }
+
   return (
     <>
       <h1>Patient manager</h1>
@@ -21,7 +27,7 @@ const App = () => {
               <Form addAppoinment={ addAppoinment }/>
           </div>
 
-          <AppoinmentsList appoinments={ appoinments }/>
+          <AppoinmentsList removeAppoinment={ removeAppoinment } appoinments={ appoinments }/>
 
         </div>
 
