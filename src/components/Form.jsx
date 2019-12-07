@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Form = () => {
+
+    const [ appointment, setAppointment ] = useState({
+        pet: '',
+        owner: '',
+        hour: '',
+        date: '',
+        symptom: ''
+    });
+
+    const handleChange = e => {
+        setAppointment({
+            ...appointment,
+            [e.target.name]: e.target.value
+        });
+    }
+
+
     return (
         <div>
             <form>
@@ -11,6 +28,7 @@ const Form = () => {
                   name="pet" 
                   className="u-full-width"
                   placeholder="Pet name"
+                  onChange={ handleChange }
                   />
 
                 <label>Owner name</label>
@@ -18,6 +36,7 @@ const Form = () => {
                   name="owner" 
                   className="u-full-width"
                   placeholder="Owner name"
+                  onChange={ handleChange }
                   />    
                   
 
@@ -25,6 +44,7 @@ const Form = () => {
                 <input type="date"
                   name="date" 
                   className="u-full-width"
+                  onChange={ handleChange }
                   /> 
 
 
@@ -32,17 +52,19 @@ const Form = () => {
                 <input type="time"
                   name="hour" 
                   className="u-full-width"
+                  onChange={ handleChange } 
                   /> 
 
                 <label>Symptom</label>
                 <textarea
                 className="u-full-width"
                 name="symptom"
+                onChange={ handleChange }
                   />
 
 
 
-                <button type="submit" className="button-primary u-full-width">Save</button>
+                <button type="submit" className="button-primary u-full-width">Save </button>
                       
             </form>
 

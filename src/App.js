@@ -4,7 +4,7 @@ import Form from './components/Form';
 
 const App = () => {
 
-  const [ appoinments , setAppoinments ] = useState(); 
+  const [ appoinments , setAppoinments ] = useState([]); 
 
   return (
     <>
