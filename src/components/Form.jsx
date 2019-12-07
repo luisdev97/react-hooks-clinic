@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 
 const Form = ({ addAppoinment }) => {
 
-    const [ appointment, setAppointment ] = useState({
+    const initialState = {
         pet: '',
         owner: '',
         hour: '',
         date: '',
         symptom: ''
-    });
+    }
+
+    const [ appointment, setAppointment ] = useState(initialState);
 
     const handleChange = e => {
         setAppointment({
@@ -19,9 +21,10 @@ const Form = ({ addAppoinment }) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-
         //set App state
         addAppoinment(appointment);
+        //reset form
+        setAppointment(initialState);
     }
 
 
@@ -35,6 +38,7 @@ const Form = ({ addAppoinment }) => {
                   name="pet" 
                   className="u-full-width"
                   placeholder="Pet name"
+                  value={ appointment.pet }
                   onChange={ handleChange }
                   />
 
@@ -43,6 +47,7 @@ const Form = ({ addAppoinment }) => {
                   name="owner" 
                   className="u-full-width"
                   placeholder="Owner name"
+                  value={ appointment.owner }
                   onChange={ handleChange }
                   />    
                   
@@ -51,6 +56,7 @@ const Form = ({ addAppoinment }) => {
                 <input type="date"
                   name="date" 
                   className="u-full-width"
+                  value={ appointment.date }
                   onChange={ handleChange }
                   /> 
 
@@ -59,6 +65,7 @@ const Form = ({ addAppoinment }) => {
                 <input type="time"
                   name="hour" 
                   className="u-full-width"
+                  value={ appointment.hour }
                   onChange={ handleChange } 
                   /> 
 
@@ -66,6 +73,7 @@ const Form = ({ addAppoinment }) => {
                 <textarea
                 className="u-full-width"
                 name="symptom"
+                value={ appointment.symptom }
                 onChange={ handleChange }
                   />
 
