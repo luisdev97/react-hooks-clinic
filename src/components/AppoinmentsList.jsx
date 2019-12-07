@@ -3,6 +3,7 @@ import Appoinment from './Appoinment';
 
 const AppoinmentsList = ({ appoinments = [], removeAppoinment }) => {
 
+    const title = appoinments.length === 0 ? 'Withouts appoinments' : 'Appoinments';
     const renderAppoinments = appoinments => {
        return appoinments.map((appoinment, index) => 
             <Appoinment 
@@ -13,6 +14,7 @@ const AppoinmentsList = ({ appoinments = [], removeAppoinment }) => {
     }
     return (
         <div className="one-half column">
+            <h2>{ title }</h2>
             { renderAppoinments(appoinments) }
         </div>
     );

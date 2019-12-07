@@ -30,8 +30,9 @@ const Form = ({ addAppoinment }) => {
 
     return (
         <div>
-            <form onSubmit={ handleSubmit }>
+            <h2>New appoinment </h2>
 
+            <form onSubmit={ handleSubmit }>
 
                 <label>Pet name</label>
                 <input type="text"
