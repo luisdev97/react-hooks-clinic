@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from './components/Form';
-
+import AppoinmentsList from './components/AppoinmentsList';
 
 const App = () => {
 
@@ -21,9 +21,7 @@ const App = () => {
               <Form addAppoinment={ addAppoinment }/>
           </div>
 
-          <div className="one-half column">
-
-          </div>
+          <AppoinmentsList appoinments={ appoinments }/>
 
         </div>
 
