@@ -13,7 +13,7 @@ const App = () => {
         <div className="row">
 
           <div className="one-half column">
-
+              <Form/>
           </div>
 
           <div className="one-half column">
